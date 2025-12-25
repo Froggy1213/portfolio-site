@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="min-h-[85vh] flex flex-col justify-center px-6 relative border-b border-gray-900">
+    <div class="max-w-4xl mx-auto w-full">
+        
+        <p class="reveal text-gray-500 font-mono text-xs tracking-[0.3em] uppercase mb-8">
+            Est. 2002 &bull; Karakol &rarr; Tokyo
+        </p>
+
+        <h1 class="reveal delay-100 text-5xl md:text-8xl font-bold tracking-tighter text-white leading-none mb-10">
+            DISCIPLINE. <br>
+            CODE. <br>
+            LEGACY.
+        </h1>
+
+        <div class="reveal delay-200 border-l border-white/20 pl-6 max-w-xl">
+            <p class="text-xl text-gray-400 leading-relaxed">
+                I do not believe in luck or talent. I believe in systems. <br>
+                From a small town in Kyrgyzstan to engineering in Tokyo. <br>
+                Building reliable software through endurance and focus.
+            </p>
+        </div>
+
+        <div class="reveal delay-300 mt-12 flex gap-6">
+            <a href="/projects" class="group flex items-center gap-3 text-white border-b border-white pb-1 hover:text-gray-400 hover:border-gray-400 transition duration-300">
+                <span>View My Work</span>
+                <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition"></i>
+            </a>
+            
+            <a href="https://instagram.com/YOUR_INSTA" target="_blank" class="group flex items-center gap-3 text-gray-500 border-b border-transparent pb-1 hover:text-white transition duration-300">
+                <span>The Journey</span>
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-[#080808]">
+    <div class="max-w-6xl mx-auto">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+            
+            <div class="reveal space-y-8 relative md:sticky md:top-24">
+                
+                <div class="aspect-[3/4] w-full max-w-md mx-auto md:mx-0 bg-gray-900 grayscale contrast-125 overflow-hidden rounded-sm relative">
+                    <img src="/static/images/me.jpg" alt="Adilet Iusupov" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition duration-700">
+                    
+                    <div class="absolute bottom-4 left-4 border-l-2 border-white pl-3 z-10">
+                        <p class="text-white font-bold text-lg uppercase tracking-widest text-shadow-md">Adilet Iusupov</p>
+                        <p class="text-gray-300 text-xs uppercase">Software Engineer</p>
+                    </div>
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+
+                <div class="flex justify-between text-xs font-mono text-gray-500 border-t border-gray-800 pt-4 max-w-md mx-auto md:mx-0">
+                    <span>AGE: 23</span>
+                    <span>LOC: TOKYO, JP</span>
+                    <span>EXP: 3+ YEARS</span>
+                </div>
+            </div>
+
+            <div class="space-y-16 md:space-y-20 pt-4 md:pt-0">
+                
+                <article class="reveal delay-100">
+                    <h2 class="text-sm font-mono text-gray-500 mb-4 md:mb-6 uppercase tracking-widest">01 / The Origin</h2>
+                    <h3 class="text-2xl md:text-3xl text-white font-bold mb-4 md:mb-6">Not given. Earned.</h3>
+                    <div class="text-gray-400 leading-loose space-y-4 text-sm md:text-base">
+                        <p>
+                            I was born in Karakol. It’s a place that teaches you the value of resources and the cost of ambition. 
+                            I didn't have a safety net. 
+                        </p>
+                        <p>
+                            Moving to Japan wasn't a holiday trip. It was a calculated risk. I paid for my own education, 
+                            learned the language from scratch, and fought for my place in Tokyo's tech industry.
+                            This path built my core: <strong>resilience over comfort.</strong>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="reveal delay-200">
+                    <h2 class="text-sm font-mono text-gray-500 mb-4 md:mb-6 uppercase tracking-widest">02 / Engineering</h2>
+                    <h3 class="text-2xl md:text-3xl text-white font-bold mb-4 md:mb-6">Backend & Architecture.</h3>
+                    <p class="text-gray-400 leading-loose mb-8 text-sm md:text-base">
+                        I don't just write code; I solve problems. My focus is on backend development—the engine under the hood that must never fail.
+                        I build simple, scalable solutions for complex real-world needs.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-gray-800 pt-6">
+                        <div>
+                            <span class="block text-white font-bold mb-1">Core</span>
+                            <span class="text-sm text-gray-500">Python, Linux, SQL</span>
+                        </div>
+                        <div>
+                            <span class="block text-white font-bold mb-1">Frameworks</span>
+                            <span class="text-sm text-gray-500">FastAPI, Django, Aiogram</span>
+                        </div>
+                        <div>
+                            <span class="block text-white font-bold mb-1">Infrastructure</span>
+                            <span class="text-sm text-gray-500">Docker, Nginx, AWS</span>
+                        </div>
+                        <div>
+                            <span class="block text-white font-bold mb-1">Frontend</span>
+                            <span class="text-sm text-gray-500">JS, HTML/CSS (Functional)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reveal delay-300">
+                    <h2 class="text-sm font-mono text-gray-500 mb-4 md:mb-6 uppercase tracking-widest">03 / Principles</h2>
+                    <h3 class="text-2xl md:text-3xl text-white font-bold mb-4 md:mb-6">The Long Game.</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="text-white font-mono mt-1">01.</span>
+                            <div>
+                                <strong class="text-white block mb-1">Discipline is freedom.</strong>
+                                <p class="text-sm text-gray-400">Motivation is cheap. Showing up every day, regardless of mood, is what builds value.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-white font-mono mt-1">02.</span>
+                            <div>
+                                <strong class="text-white block mb-1">Silence and Focus.</strong>
+                                <p class="text-sm text-gray-400">I prefer deep work over noise. Results speak louder than announcements.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-white font-mono mt-1">03.</span>
+                            <div>
+                                <strong class="text-white block mb-1">Integrity.</strong>
+                                <p class="text-sm text-gray-400">Honesty with oneself and others. My reputation is my most valuable asset.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

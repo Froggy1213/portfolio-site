@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-24 px-6 min-h-screen">
+    <div class="max-w-5xl mx-auto">
+        
+        <div class="mb-16 reveal">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
+            <p class="text-gray-400 text-lg">Избранные работы и эксперименты.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for project in projects %}
+            <article class="reveal group border border-gray-800 bg-[#0a0a0a] rounded-xl overflow-hidden hover:border-gray-600 transition duration-300">
+                
+                {% if project.image_url %}
+                <div class="h-48 bg-gray-900 overflow-hidden">
+                    <img src="{{ project.image_url }}" alt="{{ project.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                {% endif %}
+
+                <div class="p-6">
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        {% if project.tech_stack %}
+                            {% for tech in project.tech_stack.split(',') %}
+                            <span class="text-xs font-mono text-green-400 bg-green-400/10 px-2 py-1 rounded">
+                                {{ tech }}
+                            </span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-2 group-hover:text-white transition">{{ project.title }}</h2>
+                    <p class="text-gray-400 text-sm mb-6 line-clamp-3">{{ project.description }}</p>
+                    
+                    <div class="flex gap-4">
+                        {% if project.github_link %}
+                        <a href="{{ project.github_link }}" target="_blank" class="text-sm text-white border-b border-gray-600 hover:border-white pb-1">
+                            GitHub ->
+                        </a>
+                        {% endif %}
+                        
+                        {% if project.demo_link %}
+                        <a href="{{ project.demo_link }}" target="_blank" class="text-sm text-white border-b border-gray-600 hover:border-white pb-1">
+                            Live Demo ->
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if not projects %}
+        <div class="text-center py-20 text-gray-500 reveal">
+            <p>Проекты скоро появятся...</p>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+{% endblock %}

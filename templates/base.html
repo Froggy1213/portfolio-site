@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adilet Iusupov — Backend Software Engineer based in Tokyo. Specializing in Python, FastAPI, and scalable infrastructure.">
+    <meta name="keywords" content="Adilet Iusupov, Backend Developer, Tokyo, Python, FastAPI, Django, DevOps">
+    <meta name="author" content="Adilet Iusupov">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adiletyu.com/">
+    <meta property="og:title" content="Adilet Iusupov | Backend Engineer">
+    <meta property="og:description" content="Building scalable systems in Tokyo. Python, Linux, Cloud. View my portfolio.">
+    <meta property="og:image" content="https://adiletyu.com/static/images/me.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adiletyu.com/">
+    <meta property="twitter:title" content="Adilet Iusupov | Backend Engineer">
+    <meta property="twitter:description" content="Building scalable systems in Tokyo. Python, Linux, Cloud.">
+    <meta property="twitter:image" content="https://adiletyu.com/static/images/me.jpg">
+    <title>Adilet Iusupov</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-gray-800/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tighter hover:text-green-400 transition">ADILETYU</a>
+            
+            <div class="space-x-8 text-sm font-medium">
+                <a href="/projects" class="hover:text-green-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-green-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-20">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer id="contact" class="border-t border-gray-900 bg-[#0a0a0a] py-16 mt-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            
+            <h2 class="text-2xl font-bold mb-6 text-white">Let's work together</h2>
+            <p class="text-gray-500 mb-8 max-w-lg mx-auto">
+                I am open to complex engineering challenges and long-term partnerships.
+
+            </p>
+
+            <a href="mailto:contact@adiletyu.com" class="inline-flex items-center gap-3 px-6 py-3 border border-gray-700 rounded-lg hover:border-green-500 hover:text-green-400 transition duration-300 group mb-12">
+                <i class="fa-solid fa-envelope text-gray-400 group-hover:text-green-400 transition"></i>
+                <span class="font-mono text-lg">adikyu202@gmail.com</span>
+            </a>
+
+            <div class="w-16 h-px bg-gray-800 mx-auto mb-10"></div>
+
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://github.com/Froggy1213" target="_blank" class="text-gray-500 hover:text-white transition text-2xl transform hover:-translate-y-1">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/adilet-iusupov-30275a365/" target="_blank" class="text-gray-500 hover:text-blue-500 transition text-2xl transform hover:-translate-y-1">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://t.me/gg_foggy" target="_blank" class="text-gray-500 hover:text-blue-400 transition text-2xl transform hover:-translate-y-1">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="text-gray-800 text-xs uppercase tracking-widest">
+                &copy; 2025 Adilet Iusupov
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

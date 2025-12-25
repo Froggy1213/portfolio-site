@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg         
+sqladmin
+itsdangerous    
+python-multipart 
+jinja2
+python-dotenv
+pydantic-settings
