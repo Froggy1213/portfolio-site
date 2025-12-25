@@ -7,4 +7,4 @@ itsdangerous
 python-multipart 
 jinja2
 python-dotenv
-pydantic-settings
+pydantic-settingsу
