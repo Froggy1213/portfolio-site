@@ -66,7 +66,7 @@ class ProjectAdmin(ModelView, model=Project):
             upload_dir = "static/uploads"
             os.makedirs(upload_dir, exist_ok=True)
 
-            # 3. Полный путь к файлу
+            # 3. Полный путь к файлу    
             file_path = os.path.join(upload_dir, unique_name)
 
             # 4. Сохраняем файл на диск
@@ -84,12 +84,13 @@ class ProjectAdmin(ModelView, model=Project):
 # Функция инициализации
 def setup_admin(app, engine):
     authentication_backend = AdminAuth(secret_key=settings.SECRET_KEY)
-
+    
+    # ВОТ ТУТ ИЗМЕНЕНИЕ: добавили templates_dir="templates"
     admin = Admin(
         app, 
         engine, 
-        authentication_backend=authentication_backend
-        templates_dir='templates'
+        authentication_backend=authentication_backend,
+        templates_dir="templates"  # <--- Добавь эту строчку
     )
     
     admin.add_view(ProjectAdmin)
