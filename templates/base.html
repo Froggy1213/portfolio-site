@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Adilet Iusupov — Backend Software Engineer based in Tokyo. Specializing in Python, FastAPI, and scalable infrastructure.">
+    
+    <title>{% block title %}Adilet Iusupov | Backend Engineer{% endblock %}</title>
+    <meta name="description" content="{% block description %}Backend Software Engineer based in Tokyo. Specializing in Python, FastAPI, and scalable infrastructure.{% endblock %}">
     <meta name="keywords" content="Adilet Iusupov, Backend Developer, Tokyo, Python, FastAPI, Django, DevOps">
     <meta name="author" content="Adilet Iusupov">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://adiletyu.com/">
-    <meta property="og:title" content="Adilet Iusupov | Backend Engineer">
-    <meta property="og:description" content="Building scalable systems in Tokyo. Python, Linux, Cloud. View my portfolio.">
+    <meta property="og:title" content="{% block og_title %}Adilet Iusupov | Backend Engineer{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Building scalable systems in Tokyo. Python, Linux, Cloud.{% endblock %}">
     <meta property="og:image" content="https://adiletyu.com/static/images/me.jpg">
 
     <meta property="twitter:card" content="summary_large_image">
@@ -18,24 +20,37 @@
     <meta property="twitter:title" content="Adilet Iusupov | Backend Engineer">
     <meta property="twitter:description" content="Building scalable systems in Tokyo. Python, Linux, Cloud.">
     <meta property="twitter:image" content="https://adiletyu.com/static/images/me.jpg">
-    <title>Adilet Iusupov</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        page: '#050505',
+                        card: '#0a0a0a',
+                    }
+                }
+            }
+        }
+    </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://adiletyu.com/static/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://adiletyu.com/static/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://adiletyu.com/static/images/favicon.png">
     
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #050505;
+            background-color: #050505; /* Fallback */
             color: #ffffff;
             overflow-x: hidden;
         }
+        /* Анимация появления */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -45,13 +60,11 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
     </style>
 </head>
-<body class="antialiased flex flex-col min-h-screen">
+<body class="antialiased flex flex-col min-h-screen bg-page text-white">
 
-    <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-gray-800/50">
+    <nav class="fixed top-0 w-full z-50 bg-page/80 backdrop-blur-md border-b border-gray-800/50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-bold tracking-tighter hover:text-green-400 transition">ADILETYU</a>
             
@@ -66,16 +79,15 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer id="contact" class="border-t border-gray-900 bg-[#0a0a0a] py-16 mt-20">
+    <footer id="contact" class="border-t border-gray-900 bg-card py-16 mt-20">
         <div class="max-w-4xl mx-auto px-6 text-center">
             
             <h2 class="text-2xl font-bold mb-6 text-white">Let's work together</h2>
             <p class="text-gray-500 mb-8 max-w-lg mx-auto">
                 I am open to complex engineering challenges and long-term partnerships.
-
             </p>
 
-            <a href="mailto:contact@adiletyu.com" class="inline-flex items-center gap-3 px-6 py-3 border border-gray-700 rounded-lg hover:border-green-500 hover:text-green-400 transition duration-300 group mb-12">
+            <a href="mailto:adikyu202@gmail.com" class="inline-flex items-center gap-3 px-6 py-3 border border-gray-700 rounded-lg hover:border-green-500 hover:text-green-400 transition duration-300 group mb-12">
                 <i class="fa-solid fa-envelope text-gray-400 group-hover:text-green-400 transition"></i>
                 <span class="font-mono text-lg">adikyu202@gmail.com</span>
             </a>
@@ -100,12 +112,13 @@
             </div>
             
             <div class="text-gray-800 text-xs uppercase tracking-widest">
-                &copy; 2025 Adilet Iusupov
+                &copy; <span id="year">2025</span> Adilet Iusupov
             </div>
         </div>
     </footer>
 
     <script>
+        // Анимация появления
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -115,6 +128,9 @@
                 });
             }, { threshold: 0.1 });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            
+            // Автоматическое обновление года
+            document.getElementById('year').textContent = new Date().getFullYear();
         });
     </script>
 </body>
