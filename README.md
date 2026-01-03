@@ -1,105 +1,63 @@
+<div align="center">
+
 # Adilet Iusupov | Personal Portfolio
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?logo=postgresql&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-A high-performance personal portfolio website and blog built with a focus on backend architecture, clean design, and scalability. Designed to showcase engineering projects and professional services.
+<p align="center">
+  <strong>High-performance portfolio & blog engine for Backend Engineers.</strong><br>
+  Built with a focus on clean architecture, scalability, and modern DevOps practices.
+</p>
 
-## 🚀 Features
+[View Demo](https://adiletyu.com) • [Report Bug](https://github.com/Froggy1213/portfolio-site/issues) • [Request Feature](https://github.com/Froggy1213/portfolio-site/issues)
 
--   **Modern Stack:** Built with Python (FastAPI) and SQLAlchemy (Async).
--   **Admin Panel:** Integrated `sqladmin` interface for managing projects without touching the DB.
--   **Server-Side Rendering:** SEO-friendly templates using Jinja2.
--   **Responsive Design:** Styled with TailwindCSS with a custom dark mode aesthetic.
--   **Production Ready:** Dockerized setup with Nginx/Caddy proxy support (handles HTTPS and mixed content correctly).
--   **Secure:** Session-based authentication for the admin area.
+</div>
+
+---
+
+## 🚀 About The Project
+
+This project is not just a static site; it's a fully dockerized web application designed to showcase engineering skills. It features a custom admin panel, server-side rendering for SEO, and a robust backend architecture using asynchronous Python.
+
+### Key Features
+
+* **⚡ Modern Backend:** Built with **FastAPI** and **SQLAlchemy (Async)** for high performance.
+* **🛡️ Secure Admin:** Integrated **SQLAdmin** interface with session-based authentication.
+* **🎨 Responsive UI:** Styled with **TailwindCSS** (Dark Mode aesthetic).
+* **🐳 Production Ready:** Fully containerized with **Docker Compose**.
+* **🔒 Proxy Support:** Configured to work behind Nginx/Caddy with correct HTTPS handling.
+
+---
 
 ## 🛠️ Tech Stack
 
--   **Backend:** Python 3.11, FastAPI, Starlette
--   **Database:** PostgreSQL (Asyncpg + SQLAlchemy)
--   **Frontend:** HTML5, Jinja2, TailwindCSS (CDN)
--   **Infrastructure:** Docker, Docker Compose
--   **Admin Interface:** SQLAdmin
+| Category | Technologies |
+| :--- | :--- |
+| **Core** | ![Python](https://img.shields.io/badge/Python-3.11-blue) |
+| **Framework** | ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688) ![Starlette](https://img.shields.io/badge/Starlette-Ready-black) |
+| **Database** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-Async-red) |
+| **Frontend** | ![Jinja2](https://img.shields.io/badge/Jinja2-Templates-b41717) ![Tailwind](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC) |
+| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED) ![Linux](https://img.shields.io/badge/Linux-Ubuntu-E95420) |
+
+---
 
 ## 📂 Project Structure
 
+```bash
 .
 ├── app/
-│   ├── admin.py        # Admin panel configuration
-│   ├── config.py       # Environment settings (Pydantic)
-│   ├── database.py     # DB connection & session logic
-│   ├── main.py         # App entry point & routing
-│   └── models.py       # SQLAlchemy database models
+│   ├── admin.py        # Admin panel configuration & auth
+│   ├── config.py       # Pydantic settings management
+│   ├── database.py     # Async DB connection logic
+│   ├── main.py         # Application entry point
+│   └── models.py       # SQLAlchemy ORM models
 ├── static/
-│   ├── images/         # Static assets
-│   └── uploads/        # User-uploaded project images
+│   ├── images/         # Assets & Favicons
+│   └── uploads/        # User-uploaded content (Git ignored)
 ├── templates/          # Jinja2 HTML templates
-├── docker-compose.yml  # Container orchestration
-└── requirements.txt    # Python dependencies
+├── docker-compose.yml  # Orchestration
+└── requirements.txt    # Dependencies
 
-
-## ⚡ Getting Started (Local Development)
-Prerequisites
-
-    Docker & Docker Compose
-
-    Git
-
-Installation
-
-    Clone the repository:
-    Bash
-
-git clone [https://github.com/Froggy1213/portfolio-site.git](https://github.com/Froggy1213/portfolio-site.git)
-cd portfolio-site
-
-Configure Environment: Create a .env file in the root directory:
-Ini, TOML
-
-# .env example
-DB_USER=postgres
-DB_PASS=postgres
-DB_HOST=db
-DB_PORT=5432
-DB_NAME=portfolio_db
-
-SECRET_KEY=change_this_to_something_secure
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin
-DEBUG=True
-
-Run with Docker:
-Bash
-
-    docker-compose up --build
-
-        The site will be available at http://localhost:8000.
-
-        The admin panel is at http://localhost:8000/admin.
-
-🚢 Deployment
-
-The project is designed to be deployed on a Linux server using Docker.
-
-    Pull changes on the server:
-    Bash
-
-git pull origin main
-
-Restart containers:
-Bash
-
-    docker-compose up -d --build
-
-📬 Contact
-
-Adilet Iusupov - Backend Software Engineer
-
-    Email: adikyu202@gmail.com
-
-    LinkedIn: Adilet Iusupov
-
-    GitHub: Froggy1213
