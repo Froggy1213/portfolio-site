@@ -26,7 +26,6 @@ A high-performance personal portfolio website and blog built with a focus on bac
 
 ## 📂 Project Structure
 
-```bash
 .
 ├── app/
 │   ├── admin.py        # Admin panel configuration
@@ -42,7 +41,7 @@ A high-performance personal portfolio website and blog built with a focus on bac
 └── requirements.txt    # Python dependencies
 
 
-⚡ Getting Started (Local Development)
+## ⚡ Getting Started (Local Development)
 Prerequisites
 
     Docker & Docker Compose
