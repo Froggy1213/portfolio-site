@@ -1,11 +1,10 @@
-version: '3.8'
 
 services:
   web:
     build: .
     container_name: adiletyu_app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-    restart: always  # <--- ВАЖНО: Перезапуск при ошибке
+    restart: always  
     volumes:
       - .:/code:z
       - ./static:/code/static:z

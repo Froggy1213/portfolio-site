@@ -6,21 +6,21 @@ from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
-# --- НОВЫЕ ИМПОРТЫ ---
-from starlette.middleware.sessions import SessionMiddleware  # Для входа в админку
-from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware  # Для HTTPS (CSS фикс)
+from starlette.middleware.sessions import SessionMiddleware  
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware  
 # ---------------------
 
 from app.database import engine, Base, get_async_session
 from app.models import Project
 from app.admin import setup_admin
-from app.config import settings  # Импортируем настройки для SECRET_KEY
+from app.config import settings  
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+        pass
     yield
+    await engine.dispose()
 
 app = FastAPI(lifespan=lifespan)
 

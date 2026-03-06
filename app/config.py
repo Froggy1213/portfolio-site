@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     DB_PORT: int
     DB_NAME: str
 
+    DEBUG: bool = False
+
     SECRET_KEY: str
     ADMIN_USERNAME: str
     ADMIN_PASSWORD: str
